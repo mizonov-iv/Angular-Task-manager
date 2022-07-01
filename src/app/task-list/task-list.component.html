@@ -1,0 +1,35 @@
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+
+  <div class="task-item" *ngFor="let task of taskService.taskList; let i = index" appDate cdkDrag>
+
+    <div class="task-item__body">
+      <div class="task-item__title">
+        <p>{{task.title}}</p>
+      </div>
+
+      <div class="task-item__date">
+        <p>Срок: {{task.date}}</p>
+      </div>
+
+      <div class="task-item__text" *ngIf="textIsVisible || editIsVisible">
+        <p>{{task.text}}</p>
+      </div>
+    </div>
+
+    <div class="task-item__btns">
+      <button class="task-item__btn" (click)="deleteThisTask(i)">Завершить</button>
+      <button class="task-item__btn" (click)="showText()">Подробнее</button>
+      <button class="task-item__btn" (click)="showEdit()">{{toggle ? 'Изменить':'Скрыть'}}</button>
+    </div>
+
+    <form class="edit-form" *ngIf="editIsVisible">
+      <div>Редактировать</div>
+      <input type="text" [(ngModel)]="task.title" name="title">
+      <input type="text" [(ngModel)]="task.text" name="text">
+      <input type="date" [(ngModel)]="task.date" name="date">
+    </form>
+
+  </div>
+
+</div>
+

@@ -1,0 +1,54 @@
+.form__container {
+  max-width: 600px;
+  margin: 0 auto;
+
+  .form__header {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .form {
+    max-width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+      margin: 0.2rem;
+      border: 1px solid darkgrey;
+      border-radius: 5px;
+      padding: 0.2rem;
+    }
+
+    &__btn {
+      width: 100px;
+      margin: 0 auto;
+      padding: 0.2rem;
+      border: 0.5px solid;
+      border-radius: 5px;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      background-color: #e7e7e7;
+
+      &:disabled {
+        background-color: white;
+      }
+
+      &:hover {
+        background-color: dimgrey;
+        color: white;
+        border-color: black;
+      }
+    }
+
+    .validation {
+      margin: 0 auto;
+      color: darkred;
+      font-size: 12px;
+    }
+  }
+}
+

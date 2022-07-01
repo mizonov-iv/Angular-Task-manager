@@ -1,0 +1,52 @@
+.task-item {
+  width: 40%;
+  margin: 15px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #808080;
+
+  &__body {
+    font-size: 12px;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    width: 100px;
+    margin: 0.1rem auto;
+    padding: 0.2rem;
+    border: 0.5px solid;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: #e7e7e7;
+
+    &:disabled {
+      background-color: white;
+    }
+
+    &:hover {
+      background-color: dimgrey;
+      color: white;
+      border-color: black;
+    }
+  }
+
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}

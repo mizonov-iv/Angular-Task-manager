@@ -1,0 +1,38 @@
+<div class="form__container">
+
+  <h3 class="form__header">Добавить задачу</h3>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="submitForm()">
+
+    <input id="title" formControlName="title" class="form__input" type="text" placeholder="Название">
+      <div
+        *ngIf="form.get('title')?.touched && form.get('title')?.invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get('title')?.errors?.['required']">Введите название</small>
+      </div>
+
+    <input id="text" formControlName="text" class="form__input" type="text" placeholder="Описание">
+      <div
+        *ngIf="form.get('text')?.touched && form.get('text')?.invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get('text')?.errors?.['required']">Введите описание</small>
+      </div>
+
+    <input id="date" formControlName="date" class="form__input" type="text" placeholder="Выберите дату" onfocus="(this.type='date')" >
+      <div
+        *ngIf="form.get('date')?.touched && form.get('date')?.invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get('date')?.errors?.['required']">Выберите дату</small>
+      </div>
+
+    <button type="submit" class="form__btn" [disabled]="form.invalid">Добавить</button>
+  </form>
+
+</div>
+
+
+
+
